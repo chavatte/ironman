@@ -1,0 +1,340 @@
+/* CSS Reset */
+html {
+    font-size: 62.5%; /*16px em 10px*/
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* Colors */
+:root {
+    --primaryBackgroundColor: #000000ef;
+    --textColorWhite: #f8f8f8;
+    --textColorGold: rgb(185, 125, 16);
+    --textColorYellow: #fbca03;
+    --textColorRed: #aa0505;
+    --textColorDarkRed: #6a0c0b;
+    --textColorDarkestRed: #4b0908;
+}
+
+/* Global Settings */
+
+  body {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    background-color: black;
+    color: var(--textColorWhite);
+  }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--textColorGold);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+/* Links & Buttons */
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
+    }
+
+    i {
+      color: var(--primaryBackgroundColor);
+      font-size: 1.7rem;
+      transform: translateY(20%);
+    }
+
+/* Text Custom Style */
+    .neonText {
+      color: #fff;
+      text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #fff,
+      0 0 73px #2f00ff, 0 0 80px #2f00ff, 0 0 94px #2f00ff, 0 0 140px #2f00ff;
+    }
+
+/* Structure */
+    .template {
+      position: relative;
+      margin: 0.5rem;
+      padding: 1rem;
+      min-height: 100vh;
+      background-color: var(--primaryBackgroundColor);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      max-width: 120rem;
+      margin: 0 auto;
+    }
+
+/* HEADER */
+
+    .head .logo__icon {
+      filter: brightness(250%) contrast(120%);
+    }
+
+    .logo {
+      animation: fadeIn 3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .logo img {
+      width: 5rem;
+    }
+
+    .logo img:not(:first-child) {
+      width: 15rem;
+      z-index: 99;
+    }
+
+    .menu {
+      position: fixed;
+      right: 0;
+      /* margin-right: calc((100vw - 1200px) / 2); */
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 99;
+    }
+
+    .menu__item {
+      text-align: center;
+      width: 3rem;
+      margin-bottom: 0.5rem;
+      border-radius: 50%;
+      line-height: 3rem;
+    }
+
+    .menu__item span {
+      display: none;
+    }
+
+/* MAIN */
+
+  .content {
+    color: var(--textColorWhite);
+    position: relative;
+    margin-bottom: 5rem;
+  }
+
+  .content__background--mobile {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url(/Assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+  }
+
+  .content__template {
+    padding: 5rem 5rem 0rem 5rem;
+    text-align: center;
+  }
+
+  .content__template > article:not(:first-child) {
+    margin-top: 5rem;
+  }
+
+/*MAIN__SLIDER */
+  .slider {
+    position: relative;
+  }
+
+  .slider__controls {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+
+  .slider__controls__control:not(:first-child) {
+    margin-left: 2rem;
+  }
+
+  .slider__slides { 
+    display: flex;
+    overflow: hidden;
+  }
+
+  .slider__slides__slide {
+    min-width: 100%;
+  }
+
+  fieldset {
+    margin-top: 5rem;
+    border: none;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form > legend {
+    font-size: 1.4rem;
+    text-decoration: underline;
+  }
+
+  .form__label, .form__input {
+    display: block;
+  }
+
+  .form__input, textarea {
+    border: 0.1rem solid white;
+    background: rgb(27, 27, 27);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .form__label:not(:first-child),
+  .form__input:last-child {
+    margin-top: 2rem;
+  }
+
+  .form__input:last-child {
+    width: 8rem;
+  }
+
+  .form__input:last-child {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    background: none;
+    color: white;
+    border: solid white 0.1rem;
+  }
+
+/* FOOTER */
+
+    footer {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-top-style: solid;
+      border-width: 0.2rem;
+      border-radius: 30%;
+      color: var(--textColorWhite);
+      width: 100%;
+      text-align: center;
+      padding: 0.8rem;
+    }
+
+/* Responsive */
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    a {
+        display: inline;
+        width: unset;
+    }
+
+    .head {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 20rem;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .menu {
+        position: unset;
+        transform: unset;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu__list {
+        display: flex;
+    }
+    .menu__item {
+        display: flex;
+        align-items: center;
+        width: 12rem;
+        margin-bottom: 0rem;
+        border-radius: 0;
+        line-height: 0;
+        color: white;
+        justify-content: center;
+    }
+
+    .menu__item i {
+        font-size: 1.7rem;
+        transform: unset;
+        margin-right: 1rem;
+    }
+
+    .menu__item span {
+        display: inline;
+    }
+
+    .slider__slides__slide {
+        min-width: 10%;
+    }
+    .slider__controls {
+        display: none;
+    }
+
+    .slider__slides {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .form {
+        align-items: unset;
+        padding: 0 15rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .menu__item {
+        width: 18rem;
+    }
+}
